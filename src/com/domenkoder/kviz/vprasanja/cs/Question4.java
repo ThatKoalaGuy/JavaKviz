@@ -2,20 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.domenkoder.kviz;
+package com.domenkoder.kviz.vprasanja.cs;
 
 /**
  *
  * @author domen
  */
-public class HomeWindow extends javax.swing.JFrame {
+public class Question4 extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(HomeWindow.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Question4.class.getName());
 
     /**
-     * Creates new form HomeWindow
+     * Creates new form Question4
      */
-    public HomeWindow() {
+    public Question4() {
         initComponents();
     }
 
@@ -66,7 +66,7 @@ public class HomeWindow extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new HomeWindow().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new Question4().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
