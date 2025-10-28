@@ -7,7 +7,6 @@ package com.domenkoder.kviz.vprasanja.cs;
 import com.domenkoder.kviz.*;
 
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author domen
