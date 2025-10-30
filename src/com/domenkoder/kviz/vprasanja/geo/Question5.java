@@ -2,23 +2,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.domenkoder.kviz.vprasanja.mat;
+package com.domenkoder.kviz.vprasanja.geo;
 import com.domenkoder.kviz.*;
 
 import javax.swing.JOptionPane;
 
-/*
- * 
+/**
+ *
  * @author domen
  */
-public class Question6 extends javax.swing.JFrame {
+public class Question5 extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Question6.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Question5.class.getName());
 
     /**
-     * Creates new form Question6
+     * Creates new form Question5
      */
-    public Question6() {
+    public Question5() {
         initComponents();
     }
 
@@ -31,13 +31,10 @@ public class Question6 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -46,32 +43,10 @@ public class Question6 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jRadioButton3.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jRadioButton3.setText("base-16");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
-            }
-        });
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel1.setText("5. Koliko držav je v Afriki?");
 
-        jRadioButton2.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jRadioButton2.setText("base-2");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
-            }
-        });
-
-        jRadioButton1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jRadioButton1.setText("base-10");
-
-        jRadioButton4.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jRadioButton4.setText("base-6");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
-            }
-        });
+        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton2.setText("Preveri odgovor");
@@ -88,9 +63,6 @@ public class Question6 extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel1.setText("6. Kateri številski sistem uporabljamo?");
 
         jMenu1.setText("Navodila");
         jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -131,71 +103,49 @@ public class Question6 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(130, 130, 130)
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(413, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jRadioButton4)
-                        .addGap(410, 410, 410)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3))
-                .addGap(54, 54, 54))
+                        .addGap(197, 197, 197)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(391, 391, 391)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(416, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(57, 57, 57))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addComponent(jLabel1)
-                        .addGap(141, 141, 141)
-                        .addComponent(jRadioButton3)
-                        .addGap(28, 28, 28)
-                        .addComponent(jRadioButton2)
-                        .addGap(34, 34, 34)
-                        .addComponent(jRadioButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
-                        .addComponent(jButton2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jRadioButton4)))
+                .addGap(73, 73, 73)
+                .addComponent(jLabel1)
+                .addGap(233, 233, 233)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
+                .addComponent(jButton2)
                 .addGap(30, 30, 30)
                 .addComponent(jButton1)
-                .addGap(57, 57, 57))
+                .addGap(58, 58, 58))
         );
 
         setSize(new java.awt.Dimension(1216, 809));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
-
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        if (jRadioButton3.isSelected()) {
+        if (jTextField1.getText().equals("54")) {
             JOptionPane.showMessageDialog(rootPane, "Pravilno!");
         }
         else {
             JOptionPane.showMessageDialog(rootPane, "Nepravilno!");
         }
 
-        jRadioButton1.setEnabled(false);
-        jRadioButton2.setEnabled(false);
-        jRadioButton3.setEnabled(false);
-        jRadioButton4.setEnabled(false);
+        jTextField1.setEnabled(false);
 
         jButton2.setEnabled(false);
         jButton1.setVisible(true);
@@ -203,7 +153,7 @@ public class Question6 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        new Question7().setVisible(true);
+        new Question6().setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -225,10 +175,6 @@ public class Question6 extends javax.swing.JFrame {
     private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenu4ActionPerformed
-
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,7 +198,7 @@ public class Question6 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Question6().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new Question5().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -264,9 +210,6 @@ public class Question6 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
