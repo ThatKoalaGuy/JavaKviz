@@ -8,6 +8,7 @@ import com.domenkoder.kviz.vprasanja.cs.*;
 
 import javax.swing.*;
 import java.util.*;
+import java.util.function.Supplier;
 
 /**
  *
@@ -16,9 +17,10 @@ import java.util.*;
 public class HomeFrame extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(HomeFrame.class.getName());
-    public static List<JFrame> csQuestions;
-    public static List<JFrame> mathQuestions;
-    public static List<JFrame> geoQuestions;
+    public static List<Supplier<JFrame>> csFactory;
+    public static List<Supplier<JFrame>> mathFactory;
+    public static List<Supplier<JFrame>> geoFactory;
+
     
     /**
      * Creates new form HomeFrame
@@ -26,37 +28,68 @@ public class HomeFrame extends javax.swing.JFrame {
     public HomeFrame() {
         initComponents();
         
-        csQuestions = Arrays.asList(
-                new com.domenkoder.kviz.vprasanja.cs.Question1(),
-                new com.domenkoder.kviz.vprasanja.cs.Question2(),
-                new com.domenkoder.kviz.vprasanja.cs.Question3(),
-                new com.domenkoder.kviz.vprasanja.cs.Question4(),
-                new com.domenkoder.kviz.vprasanja.cs.Question5(),
-                new com.domenkoder.kviz.vprasanja.cs.Question6(),
-                new com.domenkoder.kviz.vprasanja.cs.Question7()
-        );
+        csFactory = new ArrayList<>(Arrays.asList(
+            com.domenkoder.kviz.vprasanja.cs.Question1::new,
+            com.domenkoder.kviz.vprasanja.cs.Question2::new,
+            com.domenkoder.kviz.vprasanja.cs.Question3::new,
+            com.domenkoder.kviz.vprasanja.cs.Question4::new,
+            com.domenkoder.kviz.vprasanja.cs.Question5::new,
+            com.domenkoder.kviz.vprasanja.cs.Question6::new,
+            com.domenkoder.kviz.vprasanja.cs.Question7::new
+        ));
         
-        mathQuestions = Arrays.asList(
-                new com.domenkoder.kviz.vprasanja.math.Question1(),
-                new com.domenkoder.kviz.vprasanja.math.Question2(),
-                new com.domenkoder.kviz.vprasanja.math.Question3(),
-                new com.domenkoder.kviz.vprasanja.math.Question4(),
-                new com.domenkoder.kviz.vprasanja.math.Question5(),
-                new com.domenkoder.kviz.vprasanja.math.Question6(),
-                new com.domenkoder.kviz.vprasanja.math.Question7()
-        );
+        mathFactory = new ArrayList<>(Arrays.asList(
+            com.domenkoder.kviz.vprasanja.math.Question1::new,
+            com.domenkoder.kviz.vprasanja.math.Question2::new,
+            com.domenkoder.kviz.vprasanja.math.Question3::new,
+            com.domenkoder.kviz.vprasanja.math.Question4::new,
+            com.domenkoder.kviz.vprasanja.math.Question5::new,
+            com.domenkoder.kviz.vprasanja.math.Question6::new,
+            com.domenkoder.kviz.vprasanja.math.Question7::new
+        ));
         
-       geoQuestions = Arrays.asList(
-                new com.domenkoder.kviz.vprasanja.geo.Question1(),
-                new com.domenkoder.kviz.vprasanja.geo.Question2(),
-                new com.domenkoder.kviz.vprasanja.geo.Question3(),
-                new com.domenkoder.kviz.vprasanja.geo.Question4(),
-                new com.domenkoder.kviz.vprasanja.geo.Question5(),
-                new com.domenkoder.kviz.vprasanja.geo.Question6(),
-                new com.domenkoder.kviz.vprasanja.geo.Question7()
-        );
-        
+        geoFactory = new ArrayList<>(Arrays.asList(
+            com.domenkoder.kviz.vprasanja.geo.Question1::new,
+            com.domenkoder.kviz.vprasanja.geo.Question2::new,
+            com.domenkoder.kviz.vprasanja.geo.Question3::new,
+            com.domenkoder.kviz.vprasanja.geo.Question4::new,
+            com.domenkoder.kviz.vprasanja.geo.Question5::new,
+            com.domenkoder.kviz.vprasanja.geo.Question6::new,
+            com.domenkoder.kviz.vprasanja.geo.Question7::new
+        ));  
     }
+    
+    public static int csIndex = 0;
+    public static int mathIndex = 0;
+    public static int geoIndex = 0;
+    
+    public static void showNextCS() {
+        if (csIndex < csFactory.size()) {
+            JFrame next = csFactory.get(csIndex++).get();
+            next.setVisible(true);
+        } else {
+            new ResultFrame().setVisible(true);
+        }
+    }
+
+    public static void showNextMath() {
+        if (mathIndex < mathFactory.size()) {
+            JFrame next = mathFactory.get(mathIndex++).get();
+            next.setVisible(true);
+        } else {
+            new ResultFrame().setVisible(true);
+        }
+    }
+
+    public static void showNextGeo() {
+        if (geoIndex < geoFactory.size()) {
+            JFrame next = geoFactory.get(geoIndex++).get();
+            next.setVisible(true);
+        } else {
+            new ResultFrame().setVisible(true);
+        }
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -177,8 +210,10 @@ public class HomeFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Collections.shuffle(mathQuestions);
-        mathQuestions.get(0).setVisible(true);
+        Collections.shuffle(mathFactory);
+        mathIndex = 0;
+        
+        showNextMath();
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -203,15 +238,19 @@ public class HomeFrame extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        Collections.shuffle(csQuestions);
-        csQuestions.get(0).setVisible(true);
+        Collections.shuffle(csFactory);
+        csIndex = 0;
+        
+        showNextCS();
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        Collections.shuffle(geoQuestions);
-        geoQuestions.get(0).setVisible(true);
+        Collections.shuffle(geoFactory);
+        geoIndex = 0;
+        
+        showNextGeo();
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 

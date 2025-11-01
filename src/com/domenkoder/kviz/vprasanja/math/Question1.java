@@ -5,7 +5,6 @@
 package com.domenkoder.kviz.vprasanja.math;
 
 import com.domenkoder.kviz.*;
-import static com.domenkoder.kviz.HomeFrame.mathQuestions;
 
 import javax.swing.JOptionPane;
 /**
@@ -220,7 +219,7 @@ public class Question1 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        mathQuestions.get(1).setVisible(true);
+        HomeFrame.showNextMath();
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

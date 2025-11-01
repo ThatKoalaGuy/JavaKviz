@@ -5,7 +5,6 @@
 package com.domenkoder.kviz.vprasanja.geo;
 
 import com.domenkoder.kviz.*;
-import static com.domenkoder.kviz.HomeFrame.geoQuestions;
 
 import javax.swing.JOptionPane;
 
@@ -191,7 +190,7 @@ public class Question4 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        geoQuestions.get(4).setVisible(true);
+        HomeFrame.showNextGeo();
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
