@@ -16,7 +16,9 @@ import java.util.*;
 public class HomeFrame extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(HomeFrame.class.getName());
-    private List<JFrame> csQuestions;
+    public static List<JFrame> csQuestions;
+    public static List<JFrame> mathQuestions;
+    public static List<JFrame> geoQuestions;
     
     /**
      * Creates new form HomeFrame
@@ -25,16 +27,34 @@ public class HomeFrame extends javax.swing.JFrame {
         initComponents();
         
         csQuestions = Arrays.asList(
-                new Question1(),
-                new Question2(),
-                new Question3(),
-                new Question4(),
-                new Question5(),
-                new Question6(),
-                new Question7()
+                new com.domenkoder.kviz.vprasanja.cs.Question1(),
+                new com.domenkoder.kviz.vprasanja.cs.Question2(),
+                new com.domenkoder.kviz.vprasanja.cs.Question3(),
+                new com.domenkoder.kviz.vprasanja.cs.Question4(),
+                new com.domenkoder.kviz.vprasanja.cs.Question5(),
+                new com.domenkoder.kviz.vprasanja.cs.Question6(),
+                new com.domenkoder.kviz.vprasanja.cs.Question7()
         );
         
-        Collections.shuffle(csQuestions);
+        mathQuestions = Arrays.asList(
+                new com.domenkoder.kviz.vprasanja.math.Question1(),
+                new com.domenkoder.kviz.vprasanja.math.Question2(),
+                new com.domenkoder.kviz.vprasanja.math.Question3(),
+                new com.domenkoder.kviz.vprasanja.math.Question4(),
+                new com.domenkoder.kviz.vprasanja.math.Question5(),
+                new com.domenkoder.kviz.vprasanja.math.Question6(),
+                new com.domenkoder.kviz.vprasanja.math.Question7()
+        );
+        
+       geoQuestions = Arrays.asList(
+                new com.domenkoder.kviz.vprasanja.geo.Question1(),
+                new com.domenkoder.kviz.vprasanja.geo.Question2(),
+                new com.domenkoder.kviz.vprasanja.geo.Question3(),
+                new com.domenkoder.kviz.vprasanja.geo.Question4(),
+                new com.domenkoder.kviz.vprasanja.geo.Question5(),
+                new com.domenkoder.kviz.vprasanja.geo.Question6(),
+                new com.domenkoder.kviz.vprasanja.geo.Question7()
+        );
         
     }
 
@@ -49,6 +69,8 @@ public class HomeFrame extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -61,10 +83,26 @@ public class HomeFrame extends javax.swing.JFrame {
         jLabel1.setText("JAVA KVIZ");
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton1.setText("RACUNALNISTVO");
+        jButton1.setText("MAT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jButton2.setText("RAC");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jButton3.setText("GEO");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
             }
         });
 
@@ -106,23 +144,31 @@ public class HomeFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(486, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(473, 473, 473))
             .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(391, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(473, 473, 473))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton2)
+                        .addGap(29, 29, 29)
+                        .addComponent(jButton1)
+                        .addGap(29, 29, 29)
+                        .addComponent(jButton3)
+                        .addGap(362, 362, 362))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(112, 112, 112)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 457, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(73, 73, 73))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 422, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton1)
+                    .addComponent(jButton3))
+                .addGap(108, 108, 108))
         );
 
         setSize(new java.awt.Dimension(1216, 809));
@@ -131,9 +177,8 @@ public class HomeFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
-        //csQuestions.get(0).setVisible(true);
-        new Question1().setVisible(true);
+        Collections.shuffle(mathQuestions);
+        mathQuestions.get(0).setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -155,6 +200,20 @@ public class HomeFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(rootPane, "Domen Koder, 2025 \nLicencirano z MIT licenco.");
     }//GEN-LAST:event_jMenu2MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Collections.shuffle(csQuestions);
+        csQuestions.get(0).setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        Collections.shuffle(geoQuestions);
+        geoQuestions.get(0).setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,6 +247,8 @@ public class HomeFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;

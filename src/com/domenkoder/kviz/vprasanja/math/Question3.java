@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.domenkoder.kviz.vprasanja.mat;
+package com.domenkoder.kviz.vprasanja.math;
 import com.domenkoder.kviz.*;
+import static com.domenkoder.kviz.HomeFrame.mathQuestions;
 
 import javax.swing.JOptionPane;
 
@@ -124,7 +125,7 @@ public class Question3 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        new Question4().setVisible(true);
+        mathQuestions.get(3).setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

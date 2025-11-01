@@ -7,6 +7,7 @@ package com.domenkoder.kviz.vprasanja.cs;
 import com.domenkoder.kviz.*;
 
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author domen
@@ -214,7 +215,7 @@ public class Question1 extends javax.swing.JFrame  {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        new Question2().setVisible(true);
+        HomeFrame.csQuestions.get(1).setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
