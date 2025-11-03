@@ -7,12 +7,13 @@ package com.domenkoder.kviz.vprasanja.cs;
 import com.domenkoder.kviz.*;
 
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author domen
  */
 public class Question2 extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Question2.class.getName());
 
     /**
@@ -20,6 +21,7 @@ public class Question2 extends javax.swing.JFrame {
      */
     public Question2() {
         initComponents();
+        jButton1.setVisible(false);
     }
 
     /**
@@ -208,8 +210,8 @@ public class Question2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (jCheckBox2.isSelected() && jCheckBox3.isSelected() && !jCheckBox1.isSelected() && !jCheckBox4.isSelected()) {
             JOptionPane.showMessageDialog(rootPane, "Pravilno!");
-        }
-        else {
+            Score.increment();
+        } else {
             JOptionPane.showMessageDialog(rootPane, "Nepravilno!");
         }
 
@@ -217,7 +219,7 @@ public class Question2 extends javax.swing.JFrame {
         jCheckBox2.setEnabled(false);
         jCheckBox3.setEnabled(false);
         jCheckBox4.setEnabled(false);
-        
+
         jButton2.setEnabled(false);
         jButton1.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed

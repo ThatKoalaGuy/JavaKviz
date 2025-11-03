@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.domenkoder.kviz.vprasanja.geo;
+
 import com.domenkoder.kviz.*;
 
 import javax.swing.JOptionPane;
@@ -12,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author domen
  */
 public class Question5 extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Question5.class.getName());
 
     /**
@@ -20,6 +21,7 @@ public class Question5 extends javax.swing.JFrame {
      */
     public Question5() {
         initComponents();
+        jButton1.setVisible(false);
     }
 
     /**
@@ -140,8 +142,8 @@ public class Question5 extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (jTextField1.getText().equals("54")) {
             JOptionPane.showMessageDialog(rootPane, "Pravilno!");
-        }
-        else {
+            Score.increment();
+        } else {
             JOptionPane.showMessageDialog(rootPane, "Nepravilno!");
         }
 

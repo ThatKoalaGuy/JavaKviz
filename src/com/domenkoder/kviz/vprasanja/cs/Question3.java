@@ -7,12 +7,13 @@ package com.domenkoder.kviz.vprasanja.cs;
 import com.domenkoder.kviz.*;
 
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author domen
  */
 public class Question3 extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Question3.class.getName());
 
     /**
@@ -20,6 +21,7 @@ public class Question3 extends javax.swing.JFrame {
      */
     public Question3() {
         initComponents();
+        jButton1.setVisible(false);
     }
 
     /**
@@ -174,12 +176,11 @@ public class Question3 extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(rootPane, "Nepravilno!");
         }
-        
+
         jComboBox1.setEnabled(false);
-        
+
         jButton2.setEnabled(false);
         jButton1.setVisible(true);
-
 
     }//GEN-LAST:event_jButton2ActionPerformed
 

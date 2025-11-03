@@ -4,8 +4,6 @@
  */
 package com.domenkoder.kviz;
 
-import com.domenkoder.kviz.vprasanja.cs.*;
-
 import javax.swing.*;
 import java.util.*;
 import java.util.function.Supplier;
@@ -21,48 +19,48 @@ public class HomeFrame extends javax.swing.JFrame {
     public static List<Supplier<JFrame>> mathFactory;
     public static List<Supplier<JFrame>> geoFactory;
 
-    
     /**
      * Creates new form HomeFrame
      */
     public HomeFrame() {
         initComponents();
-        
+        Score.reset();
+
         csFactory = new ArrayList<>(Arrays.asList(
-            com.domenkoder.kviz.vprasanja.cs.Question1::new,
-            com.domenkoder.kviz.vprasanja.cs.Question2::new,
-            com.domenkoder.kviz.vprasanja.cs.Question3::new,
-            com.domenkoder.kviz.vprasanja.cs.Question4::new,
-            com.domenkoder.kviz.vprasanja.cs.Question5::new,
-            com.domenkoder.kviz.vprasanja.cs.Question6::new,
-            com.domenkoder.kviz.vprasanja.cs.Question7::new
+                com.domenkoder.kviz.vprasanja.cs.Question1::new,
+                com.domenkoder.kviz.vprasanja.cs.Question2::new,
+                com.domenkoder.kviz.vprasanja.cs.Question3::new,
+                com.domenkoder.kviz.vprasanja.cs.Question4::new,
+                com.domenkoder.kviz.vprasanja.cs.Question5::new,
+                com.domenkoder.kviz.vprasanja.cs.Question6::new,
+                com.domenkoder.kviz.vprasanja.cs.Question7::new
         ));
-        
+
         mathFactory = new ArrayList<>(Arrays.asList(
-            com.domenkoder.kviz.vprasanja.math.Question1::new,
-            com.domenkoder.kviz.vprasanja.math.Question2::new,
-            com.domenkoder.kviz.vprasanja.math.Question3::new,
-            com.domenkoder.kviz.vprasanja.math.Question4::new,
-            com.domenkoder.kviz.vprasanja.math.Question5::new,
-            com.domenkoder.kviz.vprasanja.math.Question6::new,
-            com.domenkoder.kviz.vprasanja.math.Question7::new
+                com.domenkoder.kviz.vprasanja.math.Question1::new,
+                com.domenkoder.kviz.vprasanja.math.Question2::new,
+                com.domenkoder.kviz.vprasanja.math.Question3::new,
+                com.domenkoder.kviz.vprasanja.math.Question4::new,
+                com.domenkoder.kviz.vprasanja.math.Question5::new,
+                com.domenkoder.kviz.vprasanja.math.Question6::new,
+                com.domenkoder.kviz.vprasanja.math.Question7::new
         ));
-        
+
         geoFactory = new ArrayList<>(Arrays.asList(
-            com.domenkoder.kviz.vprasanja.geo.Question1::new,
-            com.domenkoder.kviz.vprasanja.geo.Question2::new,
-            com.domenkoder.kviz.vprasanja.geo.Question3::new,
-            com.domenkoder.kviz.vprasanja.geo.Question4::new,
-            com.domenkoder.kviz.vprasanja.geo.Question5::new,
-            com.domenkoder.kviz.vprasanja.geo.Question6::new,
-            com.domenkoder.kviz.vprasanja.geo.Question7::new
-        ));  
+                com.domenkoder.kviz.vprasanja.geo.Question1::new,
+                com.domenkoder.kviz.vprasanja.geo.Question2::new,
+                com.domenkoder.kviz.vprasanja.geo.Question3::new,
+                com.domenkoder.kviz.vprasanja.geo.Question4::new,
+                com.domenkoder.kviz.vprasanja.geo.Question5::new,
+                com.domenkoder.kviz.vprasanja.geo.Question6::new,
+                com.domenkoder.kviz.vprasanja.geo.Question7::new
+        ));
     }
-    
+
     public static int csIndex = 0;
     public static int mathIndex = 0;
     public static int geoIndex = 0;
-    
+
     public static void showNextCS() {
         if (csIndex < csFactory.size()) {
             JFrame next = csFactory.get(csIndex++).get();
@@ -89,7 +87,6 @@ public class HomeFrame extends javax.swing.JFrame {
             new ResultFrame().setVisible(true);
         }
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -212,7 +209,8 @@ public class HomeFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         Collections.shuffle(mathFactory);
         mathIndex = 0;
-        
+
+        Stopwatch.start();
         showNextMath();
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -240,7 +238,8 @@ public class HomeFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         Collections.shuffle(csFactory);
         csIndex = 0;
-        
+
+        Stopwatch.start();
         showNextCS();
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -249,7 +248,8 @@ public class HomeFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         Collections.shuffle(geoFactory);
         geoIndex = 0;
-        
+
+        Stopwatch.start();
         showNextGeo();
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -257,9 +257,6 @@ public class HomeFrame extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    
-    
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -280,7 +277,6 @@ public class HomeFrame extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new HomeFrame().setVisible(true));
-
 
     }
 

@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author domen
  */
 public class Question5 extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Question5.class.getName());
 
     /**
@@ -21,6 +21,7 @@ public class Question5 extends javax.swing.JFrame {
      */
     public Question5() {
         initComponents();
+        jButton1.setVisible(false);
     }
 
     /**
@@ -163,10 +164,10 @@ public class Question5 extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        if (jTextField1.getText().equals("2.718") || jTextField1.getText().equals("2,718") ) {
+        if (jTextField1.getText().equals("2.718") || jTextField1.getText().equals("2,718")) {
             JOptionPane.showMessageDialog(rootPane, "Pravilno!");
-        }
-        else {
+            Score.increment();
+        } else {
             JOptionPane.showMessageDialog(rootPane, "Nepravilno!");
         }
 

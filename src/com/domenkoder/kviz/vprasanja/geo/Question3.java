@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author domen
  */
 public class Question3 extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Question3.class.getName());
 
     /**
@@ -21,6 +21,7 @@ public class Question3 extends javax.swing.JFrame {
      */
     public Question3() {
         initComponents();
+        jButton1.setVisible(false);
     }
 
     /**

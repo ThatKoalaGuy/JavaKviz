@@ -7,12 +7,13 @@ package com.domenkoder.kviz.vprasanja.math;
 import com.domenkoder.kviz.*;
 
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author domen
  */
 public class Question1 extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Question1.class.getName());
 
     /**
@@ -20,6 +21,7 @@ public class Question1 extends javax.swing.JFrame {
      */
     public Question1() {
         initComponents();
+        jButton1.setVisible(false);
     }
 
     /**
@@ -177,7 +179,8 @@ public class Question1 extends javax.swing.JFrame {
                 .addGap(72, 72, 72))
         );
 
-        setBounds(0, 0, 1216, 809);
+        setSize(new java.awt.Dimension(1216, 809));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
@@ -203,8 +206,8 @@ public class Question1 extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (jRadioButton1.isSelected()) {
             JOptionPane.showMessageDialog(rootPane, "Pravilno!");
-        }
-        else {
+            Score.increment();
+        } else {
             JOptionPane.showMessageDialog(rootPane, "Nepravilno!");
         }
 

@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author domen
  */
 public class Question4 extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Question4.class.getName());
 
     /**
@@ -21,6 +21,7 @@ public class Question4 extends javax.swing.JFrame {
      */
     public Question4() {
         initComponents();
+        jButton1.setVisible(false);
     }
 
     /**
@@ -175,8 +176,8 @@ public class Question4 extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (jRadioButton2.isSelected()) {
             JOptionPane.showMessageDialog(rootPane, "Pravilno!");
-        }
-        else {
+            Score.increment();
+        } else {
             JOptionPane.showMessageDialog(rootPane, "Nepravilno!");
         }
 

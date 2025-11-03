@@ -9,7 +9,7 @@ package com.domenkoder.kviz;
  * @author domen
  */
 public class Navodila extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Navodila.class.getName());
 
     /**

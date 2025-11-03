@@ -12,8 +12,8 @@ import javax.swing.JOptionPane;
  *
  * @author domen
  */
-public class Question1 extends javax.swing.JFrame  {
-    
+public class Question1 extends javax.swing.JFrame {
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Question1.class.getName());
 
     /**
@@ -21,6 +21,7 @@ public class Question1 extends javax.swing.JFrame  {
      */
     public Question1() {
         initComponents();
+        jButton1.setVisible(false);
         jButton1.setVisible(false);
     }
 
@@ -223,16 +224,16 @@ public class Question1 extends javax.swing.JFrame  {
         // TODO add your handling code here:
         if (jRadioButton3.isSelected()) {
             JOptionPane.showMessageDialog(rootPane, "Pravilno!");
-        }
-        else {
+            Score.increment();
+        } else {
             JOptionPane.showMessageDialog(rootPane, "Nepravilno!");
         }
-        
+
         jRadioButton1.setEnabled(false);
         jRadioButton2.setEnabled(false);
         jRadioButton3.setEnabled(false);
         jRadioButton4.setEnabled(false);
-        
+
         jButton2.setEnabled(false);
         jButton1.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
