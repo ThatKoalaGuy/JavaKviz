@@ -153,7 +153,7 @@ public class Question1 extends javax.swing.JFrame {
 
     private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(rootPane, "Domen Koder, 2025 \nLicencirano z MIT licenco.");
+        JOptionPane.showMessageDialog(rootPane, "Domen Koder, 2025 \nv1.0 \nMentor: Tomaž Mavri \nLicencirano z MIT licenco.");
     }//GEN-LAST:event_jMenu2MouseClicked
 
     private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
