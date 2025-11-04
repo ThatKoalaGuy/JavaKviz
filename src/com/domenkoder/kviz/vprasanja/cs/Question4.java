@@ -50,7 +50,7 @@ public class Question4 extends javax.swing.JFrame {
         setTitle("Kviz | RAČUNALNITVO");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel1.setText("4. Kaj je grafična kartica?");
+        jLabel1.setText("Kaj je grafična kartica?");
 
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/domenkoder/kviz/vprasanja/cs/images/gpuN.png"))); // NOI18N

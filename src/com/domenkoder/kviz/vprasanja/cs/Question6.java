@@ -50,7 +50,7 @@ public class Question6 extends javax.swing.JFrame {
         setTitle("Kviz | RAČUNALNITVO");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel1.setText("6. Kaj pomeni SSH?");
+        jLabel1.setText("Kaj pomeni SSH?");
 
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
