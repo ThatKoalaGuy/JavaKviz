@@ -18,6 +18,8 @@ public class HomeFrame extends javax.swing.JFrame {
     public static List<Supplier<JFrame>> csFactory;
     public static List<Supplier<JFrame>> mathFactory;
     public static List<Supplier<JFrame>> geoFactory;
+    
+    private static HomeFrame current;
 
     /**
      * Creates new form HomeFrame
@@ -25,6 +27,11 @@ public class HomeFrame extends javax.swing.JFrame {
     public HomeFrame() {
         initComponents();
         Score.reset();
+        
+        if (current != null) {
+            current.dispose();
+        }
+        current = this;
 
         csFactory = new ArrayList<>(Arrays.asList(
                 com.domenkoder.kviz.vprasanja.cs.Question1::new,
@@ -153,6 +160,11 @@ public class HomeFrame extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Naloži datoteko");
+        jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu3MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Izhod");
@@ -253,6 +265,19 @@ public class HomeFrame extends javax.swing.JFrame {
         showNextGeo();
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
+        // TODO add your handling code here:
+        JFileChooser chooser = new JFileChooser();
+        chooser.setDialogTitle("Odpri pretekle rezultate kviza");
+        chooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Kviz files (*.kviz)", "kviz"));
+
+        int result = chooser.showOpenDialog(this);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            java.io.File file = chooser.getSelectedFile();
+        new ResultFrame(file.getAbsolutePath()).setVisible(true);
+        }
+    }//GEN-LAST:event_jMenu3MouseClicked
 
     /**
      * @param args the command line arguments

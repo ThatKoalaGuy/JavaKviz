@@ -5,18 +5,20 @@
 package com.domenkoder.kviz;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.nio.file.*;
 import java.util.List;
-import javax.swing.JOptionPane;
+import javax.swing.*;
+
 
 /**
- *
  * @author domen
  */
 public class ResultFrame extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ResultFrame.class.getName());
+    private static ResultFrame current;
+
+
 
     /**
      * Creates new form ResultFrame
@@ -43,21 +45,54 @@ public class ResultFrame extends javax.swing.JFrame {
         }
 
         String gradeString = grade + "";
-        String percentString = percent + "";
 
         jLabel11.setText(time);
-        jLabel8.setText(score + "");
+        jLabel8.setText(score);
         jLabel9.setText(scoreWrong);
         jLabel10.setText(String.format("%.2f%%", percent));
-        jLabel5.setText(grade + "");
+        jLabel5.setText(gradeString);
 
         try {
-            Files.write(Path.of("results.kviz"), List.of(time, score, scoreWrong, percentString, gradeString));
+            Files.write(Path.of("/saves/results.kviz"),
+                    List.of(time, score, scoreWrong, String.format("%.2f", percent), gradeString));
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         Stopwatch.reset();
+    }
+
+    /**
+     * Constructor for loading from file
+     */
+    public ResultFrame(String filePath) {
+        initComponents();
+        loadResultsFromFile(filePath);
+        
+        if (current != null) {
+            current.dispose();
+        }
+        current = this;
+    }
+
+    private void loadResultsFromFile(String filePath) {
+        try {
+            List<String> lines = Files.readAllLines(Path.of(filePath));
+
+            if (lines.size() >= 5) {
+                jLabel11.setText(lines.get(0)); // cas
+                jLabel8.setText(lines.get(1));  // score
+                jLabel9.setText(lines.get(2));  // scoreWrong
+                jLabel10.setText(lines.get(3) + "%"); // procenti
+                jLabel5.setText(lines.get(4));  // grade
+            } else {
+                JOptionPane.showMessageDialog(this, "Neveljavna datoteka: premalo vrstic!");
+            }
+
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Napaka pri branju datoteke!");
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -87,7 +122,7 @@ public class ResultFrame extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
@@ -108,7 +143,7 @@ public class ResultFrame extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel5.setText("N/A");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 510, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 520, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel6.setText("Čas:");
@@ -128,11 +163,11 @@ public class ResultFrame extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel10.setText("N/A");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 380, -1, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 390, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel11.setText("N/A");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 440, -1, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 450, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jButton2.setText("DOMOV");
@@ -160,6 +195,11 @@ public class ResultFrame extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Naloži datoteko");
+        jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu3MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Izhod");
@@ -206,6 +246,19 @@ public class ResultFrame extends javax.swing.JFrame {
         new HomeFrame().setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
+        // TODO add your handling code here:
+        JFileChooser chooser = new JFileChooser();
+        chooser.setDialogTitle("Odpri pretekle rezultate kviza");
+        chooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Kviz files (*.kviz)", "kviz"));
+
+        int result = chooser.showOpenDialog(this);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            java.io.File file = chooser.getSelectedFile();
+        new ResultFrame(file.getAbsolutePath()).setVisible(true);
+        }
+    }//GEN-LAST:event_jMenu3MouseClicked
 
     /**
      * @param args the command line arguments
