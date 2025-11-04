@@ -4,6 +4,10 @@
  */
 package com.domenkoder.kviz;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,25 +23,40 @@ public class ResultFrame extends javax.swing.JFrame {
      */
     public ResultFrame() {
         initComponents();
-        
+
+        String time = (Stopwatch.getSeconds() / 60 + "min " + Stopwatch.getSeconds() % 60 + "s");
+        String score = Score.getScore() + "";
+        String scoreWrong = 7 - Score.getScore() + "";
         double percent = (double) Score.getScore() / 7 * 100;
         int grade;
 
+        if (percent < 50) {
+            grade = 1;
+        } else if (percent < 65) {
+            grade = 2;
+        } else if (percent < 80) {
+            grade = 3;
+        } else if (percent < 90) {
+            grade = 4;
+        } else {
+            grade = 5;
+        }
 
-        jLabel11.setText(Stopwatch.getSeconds() / 60 + "min " + Stopwatch.getSeconds() % 60 + "s");
-        jLabel8.setText(Score.getScore() + "");
-        jLabel9.setText(7 - Score.getScore() + "");
+        String gradeString = grade + "";
+        String percentString = percent + "";
+
+        jLabel11.setText(time);
+        jLabel8.setText(score + "");
+        jLabel9.setText(scoreWrong);
         jLabel10.setText(String.format("%.2f%%", percent));
-
-        if (percent < 50) grade = 1;
-        else if (percent < 65) grade = 2;
-        else if (percent < 80) grade = 3;
-        else if (percent < 90) grade = 4;
-        else grade = 5;
-        
         jLabel5.setText(grade + "");
 
-        
+        try {
+            Files.write(Path.of("results.kviz"), List.of(time, score, scoreWrong, percentString, gradeString));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         Stopwatch.reset();
     }
 
@@ -183,7 +202,7 @@ public class ResultFrame extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        
+
         new HomeFrame().setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
