@@ -83,7 +83,7 @@ public class Question4 extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel1.setText("4. Kaj je najlepše mesto v Sloveniji?");
+        jLabel1.setText("Katero je najlepše mesto v Sloveniji?");
 
         jMenu1.setText("Navodila");
         jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -137,17 +137,17 @@ public class Question4 extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jRadioButton2)
                         .addGap(245, 245, 245))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(188, 188, 188)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(227, 227, 227))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
+                .addGap(55, 55, 55)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jRadioButton2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jRadioButton1, javax.swing.GroupLayout.Alignment.TRAILING))

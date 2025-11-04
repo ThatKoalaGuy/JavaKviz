@@ -51,7 +51,7 @@ public class Question1 extends javax.swing.JFrame {
         setTitle("Kviz | GEOGRAFIJA");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel1.setText("1. Slovenija je članica...");
+        jLabel1.setText("Slovenija je članica...");
 
         jRadioButton1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jRadioButton1.setText("EU");
@@ -149,21 +149,26 @@ public class Question1 extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(265, 265, 265))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(59, 59, 59)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1)
                         .addComponent(jRadioButton4)
                         .addComponent(jRadioButton3)
                         .addComponent(jRadioButton2)
                         .addComponent(jRadioButton1))
-                    .addContainerGap(622, Short.MAX_VALUE)))
+                    .addContainerGap(771, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(291, Short.MAX_VALUE)
+                .addGap(90, 90, 90)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(217, 217, 217)
                 .addComponent(jButton2)
@@ -172,9 +177,7 @@ public class Question1 extends javax.swing.JFrame {
                 .addGap(50, 50, 50))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(44, 44, 44)
-                    .addComponent(jLabel1)
-                    .addGap(114, 114, 114)
+                    .addGap(222, 222, 222)
                     .addComponent(jRadioButton1)
                     .addGap(48, 48, 48)
                     .addComponent(jRadioButton2)

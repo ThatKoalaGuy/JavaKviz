@@ -40,6 +40,7 @@ public class Question7 extends javax.swing.JFrame {
         jCheckBox4 = new javax.swing.JCheckBox();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -47,9 +48,11 @@ public class Question7 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kviz | GEOGRAFIJA");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel1.setText("7. Katere države mejijo na Slovenijo?");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 85, -1, -1));
 
         jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jCheckBox1.setText("Madžarska");
@@ -58,6 +61,7 @@ public class Question7 extends javax.swing.JFrame {
                 jCheckBox1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 248, -1, -1));
 
         jCheckBox2.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jCheckBox2.setText("Italija");
@@ -66,6 +70,7 @@ public class Question7 extends javax.swing.JFrame {
                 jCheckBox2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 348, -1, -1));
 
         jCheckBox3.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jCheckBox3.setText("Hrvaška");
@@ -74,6 +79,7 @@ public class Question7 extends javax.swing.JFrame {
                 jCheckBox3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 448, -1, -1));
 
         jCheckBox4.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jCheckBox4.setText("Avstrija");
@@ -82,6 +88,7 @@ public class Question7 extends javax.swing.JFrame {
                 jCheckBox4ActionPerformed(evt);
             }
         });
+        getContentPane().add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 548, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton2.setText("Preveri odgovor");
@@ -90,6 +97,7 @@ public class Question7 extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(939, 584, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton1.setText("Naprej");
@@ -98,6 +106,10 @@ public class Question7 extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(939, 646, 158, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/domenkoder/kviz/vprasanja/geo/images/bled.jpg"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, -1, -1));
 
         jMenu1.setText("Navodila");
         jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -129,55 +141,6 @@ public class Question7 extends javax.swing.JFrame {
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(198, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jCheckBox1)
-                                .addComponent(jCheckBox2)
-                                .addComponent(jCheckBox3))
-                            .addGap(719, 719, 719))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addGap(174, 174, 174)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jCheckBox4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(103, 103, 103))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(jLabel1)
-                .addGap(99, 99, 99)
-                .addComponent(jCheckBox1)
-                .addGap(32, 32, 32)
-                .addComponent(jCheckBox2)
-                .addGap(32, 32, 32)
-                .addComponent(jCheckBox3)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jCheckBox4)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                        .addComponent(jButton2)
-                        .addGap(30, 30, 30)
-                        .addComponent(jButton1)
-                        .addGap(99, 99, 99))))
-        );
 
         setSize(new java.awt.Dimension(1216, 809));
         setLocationRelativeTo(null);
@@ -275,6 +238,7 @@ public class Question7 extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;
