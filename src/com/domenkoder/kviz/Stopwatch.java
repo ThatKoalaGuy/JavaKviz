@@ -17,8 +17,10 @@ public class Stopwatch {
     static Timer timer;
 
     public static void start() {
+        //Preverimo ce je timer bil resetiran ter ce ne tece trenutno
         if (timer == null || !timer.isRunning()) {
             timer = new Timer(1000, new ActionListener() {
+                //Override pomeni da uporabljamo metodo od ActionListener ter enforca typing check da se ne zatipkamo
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     secondsPassed++;

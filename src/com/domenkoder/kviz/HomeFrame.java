@@ -18,7 +18,7 @@ public class HomeFrame extends javax.swing.JFrame {
     public static List<Supplier<JFrame>> csFactory;
     public static List<Supplier<JFrame>> mathFactory;
     public static List<Supplier<JFrame>> geoFactory;
-    
+
     private static HomeFrame current;
 
     /**
@@ -27,12 +27,13 @@ public class HomeFrame extends javax.swing.JFrame {
     public HomeFrame() {
         initComponents();
         Score.reset();
-        
+
         if (current != null) {
             current.dispose();
         }
         current = this;
 
+        //Ustvarimo arrayliste vseh vprasanj
         csFactory = new ArrayList<>(Arrays.asList(
                 com.domenkoder.kviz.vprasanja.cs.Question1::new,
                 com.domenkoder.kviz.vprasanja.cs.Question2::new,
@@ -68,6 +69,7 @@ public class HomeFrame extends javax.swing.JFrame {
     public static int mathIndex = 0;
     public static int geoIndex = 0;
 
+    //prikazemo naslednje vprasanje ce je se kaksno na voljo sicer prikazemo rezultate.
     public static void showNextCS() {
         if (csIndex < csFactory.size()) {
             JFrame next = csFactory.get(csIndex++).get();
@@ -115,11 +117,12 @@ public class HomeFrame extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Kviz  | DOMOV");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 100)); // NOI18N
         jLabel1.setText("JAVA KVIZ");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 100)); // NOI18N
         jButton1.setText("MAT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,15 +130,15 @@ public class HomeFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton2.setText("RAC");
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 100)); // NOI18N
+        jButton2.setText("RAČ");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 100)); // NOI18N
         jButton3.setText("GEO");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,7 +162,7 @@ public class HomeFrame extends javax.swing.JFrame {
         });
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setText("Naloži datoteko");
+        jMenu3.setText("Preveri rezulate iz datoteke");
         jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenu3MouseClicked(evt);
@@ -187,25 +190,25 @@ public class HomeFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(391, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(473, 473, 473))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(240, Short.MAX_VALUE)
                         .addComponent(jButton2)
                         .addGap(29, 29, 29)
                         .addComponent(jButton1)
-                        .addGap(29, 29, 29)
-                        .addComponent(jButton3)
-                        .addGap(362, 362, 362))))
+                        .addGap(40, 40, 40)
+                        .addComponent(jButton3))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(344, 344, 344)
+                        .addComponent(jLabel1)))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(112, 112, 112)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 422, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 282, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton1)
@@ -217,6 +220,7 @@ public class HomeFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    //Vedno arraylist najprej shufflamo, startamo stoparico in pozenemo prvo vprasanje.
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Collections.shuffle(mathFactory);
@@ -266,6 +270,7 @@ public class HomeFrame extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    //Menu za nalaganje save file-a
     private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
         // TODO add your handling code here:
         JFileChooser chooser = new JFileChooser();
@@ -275,7 +280,7 @@ public class HomeFrame extends javax.swing.JFrame {
         int result = chooser.showOpenDialog(this);
         if (result == JFileChooser.APPROVE_OPTION) {
             java.io.File file = chooser.getSelectedFile();
-        new ResultFrame(file.getAbsolutePath()).setVisible(true);
+            new ResultFrame(file.getAbsolutePath()).setVisible(true);
         }
     }//GEN-LAST:event_jMenu3MouseClicked
 
@@ -301,7 +306,7 @@ public class HomeFrame extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new HomeFrame().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new WelcomeFrame().setVisible(true));
 
     }
 

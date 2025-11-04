@@ -10,6 +10,7 @@ package com.domenkoder.kviz;
  */
 public class Score {
 
+    //Ta class shranjuje le tocke
     static int score = 0;
 
     public static void reset() {

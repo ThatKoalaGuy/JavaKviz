@@ -9,7 +9,6 @@ import java.nio.file.*;
 import java.util.List;
 import javax.swing.*;
 
-
 /**
  * @author domen
  */
@@ -18,14 +17,13 @@ public class ResultFrame extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ResultFrame.class.getName());
     private static ResultFrame current;
 
-
-
     /**
      * Creates new form ResultFrame
      */
     public ResultFrame() {
         initComponents();
 
+        //Naredimo variable za vse labele
         String time = (Stopwatch.getSeconds() / 60 + "min " + Stopwatch.getSeconds() % 60 + "s");
         String score = Score.getScore() + "";
         String scoreWrong = 7 - Score.getScore() + "";
@@ -52,23 +50,23 @@ public class ResultFrame extends javax.swing.JFrame {
         jLabel10.setText(String.format("%.2f%%", percent));
         jLabel5.setText(gradeString);
 
+        //Ustvarimo datoteko ter v vsako vrstico zapisemo enega izmed podatkov
         try {
-            Files.write(Path.of("/saves/results.kviz"),
+            Files.write(Path.of("results.kviz"),
                     List.of(time, score, scoreWrong, String.format("%.2f", percent), gradeString));
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+        //Resetiramo stoparico v primeru da bo igralec sel novo igro
         Stopwatch.reset();
     }
 
-    /**
-     * Constructor for loading from file
-     */
     public ResultFrame(String filePath) {
         initComponents();
         loadResultsFromFile(filePath);
-        
+
+        //safeguard da ni vec enakih oken odprtih
         if (current != null) {
             current.dispose();
         }
@@ -119,10 +117,10 @@ public class ResultFrame extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Kviz | REZULTATI");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
@@ -170,7 +168,7 @@ public class ResultFrame extends javax.swing.JFrame {
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 450, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButton2.setText("DOMOV");
+        jButton2.setText("ZAPRI");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -193,14 +191,6 @@ public class ResultFrame extends javax.swing.JFrame {
             }
         });
         jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Naloži datoteko");
-        jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu3MouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Izhod");
         jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -247,19 +237,6 @@ public class ResultFrame extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
-        // TODO add your handling code here:
-        JFileChooser chooser = new JFileChooser();
-        chooser.setDialogTitle("Odpri pretekle rezultate kviza");
-        chooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Kviz files (*.kviz)", "kviz"));
-
-        int result = chooser.showOpenDialog(this);
-        if (result == JFileChooser.APPROVE_OPTION) {
-            java.io.File file = chooser.getSelectedFile();
-        new ResultFrame(file.getAbsolutePath()).setVisible(true);
-        }
-    }//GEN-LAST:event_jMenu3MouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -300,7 +277,6 @@ public class ResultFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
