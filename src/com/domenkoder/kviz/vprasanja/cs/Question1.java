@@ -52,7 +52,7 @@ public class Question1 extends javax.swing.JFrame {
         setTitle("Vprasanje 1 | RAČUNALNIŠTVO");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel1.setText("1. Kateri OS temelji na jedru Linux?");
+        jLabel1.setText("Kateri OS temelji na jedru Linux?");
 
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
@@ -148,7 +148,7 @@ public class Question1 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(304, 346, Short.MAX_VALUE))
+                        .addGap(304, 400, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jRadioButton4)
